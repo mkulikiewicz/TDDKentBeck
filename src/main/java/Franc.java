@@ -1,10 +1,10 @@
 class Franc extends Many {
 
-    Franc(int amount) {
-        super(amount);
+    Franc(int amount, String currency) {
+        super(amount,currency);
     }
 
     Franc times(int multiplication) {
-        return new Franc(amount * multiplication);
+        return Many.franc(amount * multiplication);
     }
 }

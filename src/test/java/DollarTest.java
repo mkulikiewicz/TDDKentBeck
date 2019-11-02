@@ -19,4 +19,11 @@ public class DollarTest {
         assertTrue(Many.dollar(5).equals(Many.dollar(5)));
         assertFalse(Many.dollar(5).equals(Many.dollar(6)));
     }
+
+    @Test
+    public void testConcurrency()
+    {
+        assertEquals("USD", Many.dollar(1).currency());
+        assertEquals("CHF", Many.franc(1).currency());
+    }
 }

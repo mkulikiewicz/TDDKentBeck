@@ -1,16 +1,17 @@
 abstract class Many {
     int amount;
-
-    Many(int amount) {
+    protected  String currency;
+    Many(int amount, String currency) {
         this.amount = amount;
+        this.currency = currency;
     }
 
     static Dollar dollar(int amount) {
-        return new Dollar(amount);
+        return new Dollar(amount,"USD");
     }
 
     static Franc franc(int amount) {
-        return new Franc(amount);
+        return new Franc(amount,"CHF");
     }
 
 
@@ -25,4 +26,8 @@ abstract class Many {
     }
 
     abstract Many times(int amount);
+
+    String  currency(){
+        return currency;
+    }
 }

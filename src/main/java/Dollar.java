@@ -1,10 +1,10 @@
 class Dollar extends Many {
 
-    Dollar(int amount) {
-        super(amount);
+    Dollar(int amount, String currency) {
+        super(amount,currency);
     }
 
     Dollar times(int multiplication) {
-        return new Dollar(amount * multiplication);
+        return Many.dollar(amount * multiplication);
     }
 }
