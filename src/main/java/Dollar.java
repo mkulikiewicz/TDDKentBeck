@@ -1,10 +1,6 @@
-class Dollar extends Many {
+class Dollar extends Money {
 
     Dollar(int amount, String currency) {
-        super(amount,currency);
-    }
-
-    Dollar times(int multiplication) {
-        return Many.dollar(amount * multiplication);
+        super(amount, currency);
     }
 }

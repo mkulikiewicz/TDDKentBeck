@@ -1,7 +1,7 @@
-abstract class Many {
+class Money {
     int amount;
     protected  String currency;
-    Many(int amount, String currency) {
+    Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
     }
@@ -17,15 +17,17 @@ abstract class Many {
 
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof  Many)
+        if(obj instanceof Money)
         {
-            if(obj.getClass().equals(this.getClass()))
-            return ((Many) obj).amount == this.amount;
+            if(((Money) obj).currency.equals(this.currency))
+            return ((Money) obj).amount == this.amount;
         }
         return false;
     }
 
-    abstract Many times(int amount);
+    Money times(int multiplication) {
+        return new Money(amount * multiplication,currency);
+    }
 
     String  currency(){
         return currency;

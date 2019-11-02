@@ -6,18 +6,22 @@ public class FrancTest {
 
 
     @Test
-    public void testMultiplication()
-    {
-        Many five = Many.franc(5);
-        assertEquals(Many.franc(10),five.times(2));
-        assertEquals(Many.franc(15),five.times(3));
+    public void testMultiplication() {
+        Money five = Money.franc(5);
+        assertEquals(Money.franc(10), five.times(2));
+        assertEquals(Money.franc(15), five.times(3));
     }
 
     @Test
-    public void testEquality()
-    {
-        assertTrue(Many.franc(5).equals(Many.franc(5)));
-        assertFalse(Many.franc(5).equals(Many.franc(6)));
-        assertFalse(Many.franc(5).equals(Many.dollar(5)));
+    public void testEquality() {
+        assertTrue(Money.franc(5).equals(Money.franc(5)));
+        assertFalse(Money.franc(5).equals(Money.franc(6)));
+        assertFalse(Money.franc(5).equals(Money.dollar(5)));
+    }
+
+    @Test
+    public void testDifferentClassEquality() {
+        assertEquals(new Money(5, "USD"), new Dollar(5, "USD"));
+        assertEquals(new Money(5, "CHF"), new Franc(5, "CHF"));
     }
 }
