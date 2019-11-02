@@ -2,7 +2,7 @@ import org.testng.annotations.*;
 
 import static org.testng.Assert.*;
 
-public class DollarTest {
+public class MoneyTest {
 
 
     @Test
@@ -18,6 +18,7 @@ public class DollarTest {
     {
         assertTrue(Money.dollar(5).equals(Money.dollar(5)));
         assertFalse(Money.dollar(5).equals(Money.dollar(6)));
+        assertFalse(Money.franc(5).equals(Money.dollar(5)));
     }
 
     @Test
