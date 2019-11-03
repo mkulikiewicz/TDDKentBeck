@@ -32,4 +32,8 @@ class Money {
     String  currency(){
         return currency;
     }
+
+    public Money plus(Money money) {
+        return new Money(amount +money.amount, currency);
+    }
 }
