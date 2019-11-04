@@ -15,12 +15,20 @@ public class WasRunTest {
     }
 
     @Test
-    public void testTestCase()
+    public void testRunTestCase()
     {
-        WasRun test = new WasRun(false);
+        TestCase test = new TestCase(false);
         assertFalse(test.wasRun);
         test.run();
         assertTrue(test.wasRun);
+    }
+
+    @Test
+    public void testSetUp()
+    {
+        TestCase test = new TestCase(false);
+        test.run();
+        assertTrue(test.wasSetUp);
     }
 
 

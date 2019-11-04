@@ -1,6 +1,7 @@
 package testframework;
 
 class WasRun {
+    boolean wasSetUp;
     boolean wasRun;
 
     WasRun(boolean wasRun) {
@@ -11,7 +12,11 @@ class WasRun {
         wasRun = true;
     }
 
-    public void run() {
+    void run() {
         testMethod();
+    }
+
+    void setUp() {
+        wasSetUp = true;
     }
 }
