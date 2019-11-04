@@ -9,5 +9,6 @@ class TestCase extends WasRun {
     public void run() {
         super.setUp();
         testMethod();
+        super.tearDown();
     }
 }

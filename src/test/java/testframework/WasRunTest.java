@@ -24,11 +24,11 @@ public class WasRunTest {
     }
 
     @Test
-    public void testSetUp()
+    public void testTemplateMethod()
     {
         TestCase test = new TestCase(false);
         test.run();
-        assertTrue(test.wasSetUp);
+        assertEquals("setUp testMethod tearDown ", test.log);
     }
 
 
