@@ -1,3 +1,5 @@
+package financialcalculator;
+
 class Money implements Expression {
     int amount;
     String currency;

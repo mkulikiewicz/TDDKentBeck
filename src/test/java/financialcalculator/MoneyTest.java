@@ -1,3 +1,9 @@
+package financialcalculator;
+
+import financialcalculator.Bank;
+import financialcalculator.Expression;
+import financialcalculator.Money;
+import financialcalculator.Sum;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;

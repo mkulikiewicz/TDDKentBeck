@@ -1,3 +1,5 @@
+package financialcalculator;
+
 import java.util.Hashtable;
 
 class Bank {
