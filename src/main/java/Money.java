@@ -1,6 +1,6 @@
 class Money implements Expression {
     int amount;
-    protected String currency;
+    String currency;
 
     Money(int amount, String currency) {
         this.amount = amount;
@@ -37,7 +37,18 @@ class Money implements Expression {
         return new Sum(this, addend);
     }
 
-    public Money reduce(String to) {
-        return this;
+    public Money reduce(Bank bank,String to) {
+        int rate = bank.rate(currency,to);
+        return new Money(amount/rate, to);
+    }
+
+    @Override
+    public String toString()
+    {
+        if(currency.equals("USD"))
+        return amount + "$";
+        if(currency.equals("CHF"))
+            return amount+"₣";
+        return amount + currency;
     }
 }
