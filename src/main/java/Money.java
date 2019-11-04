@@ -25,7 +25,7 @@ class Money implements Expression {
         return false;
     }
 
-    Expression times(int multiplication) {
+    public Expression times(int multiplication) {
         return new Money(amount * multiplication, currency);
     }
 
