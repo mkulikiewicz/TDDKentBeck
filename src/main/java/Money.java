@@ -1,35 +1,43 @@
-class Money {
+class Money implements Expression {
     int amount;
-    protected  String currency;
+    protected String currency;
+
     Money(int amount, String currency) {
         this.amount = amount;
         this.currency = currency;
     }
 
     static Money dollar(int amount) {
-        return new Money(amount,"USD");
+        return new Money(amount, "USD");
     }
 
     static Money franc(int amount) {
-        return new Money(amount,"CHF");
+        return new Money(amount, "CHF");
     }
 
 
     @Override
     public boolean equals(Object obj) {
-        if(obj instanceof Money)
-        {
-            if(((Money) obj).currency.equals(this.currency))
-            return ((Money) obj).amount == this.amount;
+        if (obj instanceof Money) {
+            if (((Money) obj).currency.equals(this.currency))
+                return ((Money) obj).amount == this.amount;
         }
         return false;
     }
 
     Money times(int multiplication) {
-        return new Money(amount * multiplication,currency);
+        return new Money(amount * multiplication, currency);
     }
 
-    String  currency(){
+    String currency() {
         return currency;
+    }
+
+    Expression plus(Money addend) {
+        return new Sum(this, addend);
+    }
+
+    public Money reduce(String to) {
+        return this;
     }
 }
